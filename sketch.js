@@ -11,6 +11,7 @@ var pad1,pad2,pad3,pad4;
 var edges;
 var y1,y2,x3,x4;
 var index
+var pos1,pos2,pos3,pos4;
 
 function setup(){
 
@@ -35,7 +36,7 @@ function draw(){
     //background("white");
 
     //fetches x and y value
-    /*database.ref('players/player1/y').on("value",(data)=>{
+    database.ref('players/player1/y').on("value",(data)=>{
       y1 = data.val();
     })
  
@@ -49,58 +50,12 @@ function draw(){
  
    database.ref('players/player4/x').on("value",(data)=>{
      x4 = data.val();
-   })*/
+   })
 
     if(HighestScore<score){
         HighestScore= score; 
       } 
-
-
-
-      //updates positions
-      if(index === 1){
-        if(keyDown(UP_ARROW)){
-            player.updatePos(-5);           
-        }
-        if(keyDown(DOWN_ARROW)){
-            player.updatePos(5);
-        }
-    }
-
-    if(index === 2){
-        if(keyDown(UP_ARROW)){
-            player.updatePos(-5);
-            
-        }
-        if(keyDown(DOWN_ARROW)){
-            player.updatePos(5);
-            
-        }
-    }
-
-    if(index === 3){
-        if(keyDown(RIGHT_ARROW)){
-            player.updatePos(5);
-            //player3.update();
-        }
-        if(keyDown(LEFT_ARROW)){
-            player.updatePos(-5);
-            //player3.update();
-        }
-    }
-
-    if(index === 4){
-        if(keyDown(RIGHT_ARROW)){
-            player.updatePos(5);
-            //player.update();
-        }
-        if(keyDown(LEFT_ARROW)){
-            player.updatePos(-5);
-            //player.update();
-        }
-    }
-
-
+      
       //console.log(score);
 
     if(playerCount === 4){
